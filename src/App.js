@@ -5,6 +5,7 @@ import { clone } from "three/examples/jsm/utils/SkeletonUtils";
 
 // Soldier Component with Animation
 function Soldier({ url, position, animationName }) {
+  console.log(url)
   const { scene, animations } = useGLTF(url);
   const clonedScene = clone(scene); // Deep clone to avoid sharing animations
   const soldierRef = useRef();
