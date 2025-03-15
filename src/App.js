@@ -2,6 +2,7 @@ import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, useAnimations } from "@react-three/drei";
 import { clone } from "three/examples/jsm/utils/SkeletonUtils";
+import model from "./Soldier.glb";
 
 // Soldier Component with Animation
 function Soldier({ url, position, animationName }) {
@@ -32,9 +33,9 @@ export default function App() {
 
       <Suspense fallback={null}>
         {/* Three Soldiers with Different Animations */}
-        <Soldier url="/soldier.glb" position={[-5, 0, 0]} animationName="Idle" />
-        <Soldier url="/soldier.glb" position={[0, 0, 0]} animationName="Walk" />
-        <Soldier url="/soldier.glb" position={[5, 0, 0]} animationName="Run" />
+        <Soldier url={model} position={[-5, 0, 0]} animationName="Idle" />
+        <Soldier url={model} position={[0, 0, 0]} animationName="Walk" />
+        <Soldier url={model} position={[5, 0, 0]} animationName="Run" />
       </Suspense>
 
       <OrbitControls />
